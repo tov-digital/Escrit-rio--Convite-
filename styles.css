@@ -123,16 +123,15 @@ body {
     margin: 0 auto;
 }
 
-/* Header no Topo (Flutuando delicadamente sobre o topo da imagem) */
+/* Header posicionada dentro das informações abaixo da imagem */
 .header {
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem 1.2rem;
-    background: rgba(247, 244, 240, 0.88);
-    backdrop-filter: blur(12px);
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-subtle);
+    padding: 1.5rem 1.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .badge-tag {
@@ -166,23 +165,10 @@ body {
     font-weight: 600;
 }
 
-.preface-credit {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-top: 0.15rem;
-    font-style: italic;
-}
-
-.preface-credit span {
-    font-weight: 600;
-    color: var(--text-secondary);
-    font-style: normal;
-}
-
-/* Indicador de Rolagem */
+/* Indicador de Rolagem na tela inicial */
 .scroll-prompt {
-    margin-top: 52vh; /* Alinhado ao respiro inferior da imagem do livro expandida */
-    margin-bottom: 2rem;
+    margin-top: 78vh; /* Posicionado delicadamente na borda inferior da tela */
+    margin-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
