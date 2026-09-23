@@ -80,15 +80,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 1rem 6rem 1rem;
+    padding: 0.8rem; /* Margens mínimas de respiro nas bordas da tela */
 }
 
 .hero-full-image {
-    width: 100%;
-    max-width: 440px;
-    max-height: 75vh;
+    width: 94vw;
+    max-width: 480px;
+    height: 84vh;
+    max-height: 88vh;
     object-fit: contain;
-    filter: drop-shadow(0 15px 30px rgba(45, 20, 35, 0.15));
+    filter: drop-shadow(0 15px 35px rgba(45, 20, 35, 0.18));
     transform: scale(1);
     transition: transform 0.1s linear, opacity 0.1s linear, filter 0.1s linear;
     will-change: transform, opacity, filter;
@@ -180,7 +181,7 @@ body {
 
 /* Indicador de Rolagem */
 .scroll-prompt {
-    margin-top: 38vh; /* Dá visibilidade total à imagem de fundo expandida */
+    margin-top: 52vh; /* Alinhado ao respiro inferior da imagem do livro expandida */
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -189,7 +190,7 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--accent-gold);
-    background: rgba(247, 244, 240, 0.9);
+    background: rgba(247, 244, 240, 0.92);
     padding: 0.6rem 1rem;
     border-radius: 50px;
     display: inline-flex;
