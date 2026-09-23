@@ -96,25 +96,22 @@ body {
     will-change: transform, opacity, filter;
 }
 
-/* Seta discreta dourada indicando rolagem (Posicionada abaixo do livro) */
+/* Seta discreta dourada indicando rolagem (Apenas a seta, sem círculo em volta) */
 .scroll-arrow-discrete {
     position: absolute;
-    bottom: 24px;
+    bottom: 65px; /* Subida de posição */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     color: var(--accent-gold);
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(247, 244, 240, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(179, 139, 66, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
     transition: opacity 0.2s ease, transform 0.2s ease;
     cursor: pointer;
 }
