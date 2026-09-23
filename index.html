@@ -26,8 +26,8 @@
     <!-- Main Responsive Grid Layout Container -->
     <div class="main-layout-container">
 
-        <!-- Coluna Esquerda: Livro em Destaque com Efeito Glow -->
-        <div class="book-column-left">
+        <!-- Coluna 1 (Desktop) / Hero Top (Mobile): Imagem do Livro com Destaque -->
+        <div class="layout-col layout-col-book" id="colBook">
             <div class="full-bleed-bg" id="fullBleedBg">
                 <div class="hero-image-wrap">
                     <div class="book-highlight-glow"></div>
@@ -44,13 +44,11 @@
             </div>
         </div>
 
-        <!-- Coluna Direita: Informações, Detalhes e Formulário RSVP -->
-        <div class="content-column-right app-wrapper">
-
-            <main class="info-content-below">
-                
-                <!-- Caixa do Cabeçalho -->
-                <header class="header text-center">
+        <!-- Coluna 2 (Desktop) / Parte 1 do Conteúdo (Mobile): Save the date, Local, Data/Hora & Contador -->
+        <div class="layout-col layout-col-info app-content-block" id="colInfo">
+            
+            <!-- Caixa do Cabeçalho -->
+            <header class="header text-center">
                 <span class="badge-tag">SAVE THE DATE</span>
                 <h1 class="main-heading">Lançamento Oficial</h1>
                 <p class="author-credit">Obra de <strong>Filipe R. Carvalho</strong></p>
@@ -110,7 +108,11 @@
                 </div>
             </section>
 
-            <!-- Formulário RSVP -->
+        </div>
+
+        <!-- Coluna 3 (Desktop) / Parte 2 do Conteúdo (Mobile): Formulário RSVP -->
+        <div class="layout-col layout-col-rsvp app-content-block" id="colRsvp">
+            
             <section class="rsvp-section" id="rsvpSection">
                 <div class="rsvp-card" id="formCard">
                     <div class="rsvp-header text-center">
@@ -165,16 +167,14 @@
                 </div>
             </section>
 
-            <!-- Rodapé -->
-            <footer class="footer text-center">
-                <p class="footer-copy">© 2026 Filipe R. Carvalho. Todos os direitos reservados.</p>
-            </footer>
+        </div>
 
-        </main>
+        <!-- Rodapé Centralizado em Tela Cheia no Desktop e Mobile -->
+        <footer class="footer text-center full-width-footer">
+            <p class="footer-copy">© 2026 Filipe R. Carvalho. Todos os direitos reservados.</p>
+        </footer>
 
-    </div> <!-- /content-column-right -->
-
-</div> <!-- /main-layout-container -->
+    </div> <!-- /main-layout-container -->
 
     <script src="script.js"></script>
 </body>
