@@ -70,7 +70,7 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Alinhado ao topo sem margem superior */
     background-color: #faf7f4;
 }
 
@@ -79,16 +79,17 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 0.8rem; /* Margens mínimas de respiro nas bordas da tela */
+    align-items: flex-start; /* Inicia no topo exato da tela */
+    padding: 0; /* Sem margem superior */
 }
 
 .hero-full-image {
-    width: 94vw;
-    max-width: 480px;
-    height: 84vh;
-    max-height: 88vh;
+    width: 100vw;
+    max-width: 500px;
+    height: auto;
+    max-height: 85vh;
     object-fit: contain;
+    object-position: top center; /* Alinha o topo da imagem exatamente ao topo da página */
     filter: drop-shadow(0 15px 35px rgba(45, 20, 35, 0.18));
     transform: scale(1);
     transition: transform 0.1s linear, opacity 0.1s linear, filter 0.1s linear;
@@ -199,7 +200,7 @@ body {
    Informações Posicionadas Abaixo da Imagem
    ========================================================================== */
 .info-content-below {
-    margin-top: 80vh; /* Inicia o conteúdo rolável abaixo da imagem de capa */
+    margin-top: 68vh; /* Inicia o conteúdo rolável perfeitamente abaixo da capa no topo */
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
