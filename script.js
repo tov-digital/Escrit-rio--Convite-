@@ -313,7 +313,7 @@ END:VCALENDAR`;
         // WhatsApp Share Link
         const shareWspBtn = document.getElementById('shareWspBtn');
         if (shareWspBtn) {
-            const shareText = encodeURIComponent(`Olá! Gostaria de te convidar para o lançamento do livro *Devedor Contumaz* por Filipe R. Carvalho.\n\n📅 Data: 22/10/2026 às 18h\n📍 Local: Auditório da ACIRP em São José do Rio Preto - SP.\n\nConfirme sua presença!`);
+            const shareText = encodeURIComponent(`Olá! Gostaria de te convidar para o lançamento do livro *Devedor Contumaz* por escrito pelo *Dr. Filipe R. Carvalho*.\n\n📅 Data: 22/10/2026 às 18h\n📍 Local: Auditório da ACIRP \n\nConfirme sua presença em: \n\nconvite.advocaciafilipecarvalho.com.br`);
             shareWspBtn.href = `https://api.whatsapp.com/send?text=${shareText}`;
         }
     }
