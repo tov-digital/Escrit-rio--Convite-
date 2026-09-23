@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Save the Date | Lançamento Devedor Contumaz - Filipe R. Carvalho</title>
+    <meta name="description" content="Convite oficial: Save the Date do lançamento do livro Devedor Contumaz por Filipe R. Carvalho. Dia 22/10/2026 às 18h na ACIRP São José do Rio Preto - SP.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Fixed Background Book Image with Scroll Fade Overlay -->
+    <div class="fixed-book-bg" id="fixedBookBg">
+        <div class="book-bg-glow"></div>
+        <img src="images/Livro.png" alt="Capa do Livro Devedor Contumaz" class="book-bg-image" id="bookBgImg">
+        <div class="book-bg-overlay" id="bgOverlay"></div>
+    </div>
+
+    <!-- Mobile-First App Scroll Content Layer -->
+    <div class="app-wrapper">
+
+        <!-- Top Spacing Hero Header -->
+        <header class="header text-center">
+            <span class="badge-tag">SAVE THE DATE</span>
+            <h1 class="main-heading">Lançamento Oficial</h1>
+            <p class="author-credit">Obra de <strong>Filipe R. Carvalho</strong></p>
+            <p class="preface-credit">Prefácio e Revisão de <span>Costa Machado</span></p>
+        </header>
+
+        <!-- Book Title Banner (Scrolls over background) -->
+        <section class="book-title-banner text-center">
+            <h2 class="book-title">DEVEDOR CONTUMAZ</h2>
+            <p class="book-subtitle">Análise, Planejamento e Estratégias de Defesa na <strong>Lei Complementar 225/2026</strong></p>
+            
+            <div class="scroll-indicator">
+                <span>Role para ver os detalhes</span>
+                <i class="fa-solid fa-chevron-down bounce"></i>
+            </div>
+        </section>
+
+        <!-- Content Card Overlay (Scrolls over the background image, triggering the fade) -->
+        <div class="content-cards-container">
+            
+            <!-- Key Event Details -->
+            <section class="event-details">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                    <div class="detail-content">
+                        <span class="detail-label">DATA & HORÁRIO</span>
+                        <strong class="detail-value">22 de Outubro de 2026</strong>
+                        <span class="detail-sub">Quinta-feira, às 18:00h</span>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="detail-content">
+                        <span class="detail-label">LOCAL DO EVENTO</span>
+                        <strong class="detail-value">Auditório da ACIRP</strong>
+                        <span class="detail-sub">Associação Comercial e Empresarial<br>São José do Rio Preto – SP</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contador Regressivo Compacto -->
+            <section class="countdown-section text-center">
+                <span class="countdown-label"><i class="fa-regular fa-clock"></i> FALTAM PARA O EVENTO</span>
+                <div class="countdown-grid" id="countdown">
+                    <div class="count-item">
+                        <span class="count-num" id="days">00</span>
+                        <span class="count-unit">dias</span>
+                    </div>
+                    <div class="count-divider">:</div>
+                    <div class="count-item">
+                        <span class="count-num" id="hours">00</span>
+                        <span class="count-unit">horas</span>
+                    </div>
+                    <div class="count-divider">:</div>
+                    <div class="count-item">
+                        <span class="count-num" id="minutes">00</span>
+                        <span class="count-unit">min</span>
+                    </div>
+                    <div class="count-divider">:</div>
+                    <div class="count-item">
+                        <span class="count-num" id="seconds">00</span>
+                        <span class="count-unit">seg</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RSVP Form Section -->
+            <section class="rsvp-section" id="rsvpSection">
+                <div class="rsvp-card" id="formCard">
+                    <div class="rsvp-header text-center">
+                        <h3><i class="fa-regular fa-pen-to-square"></i> Confirmar Presença</h3>
+                        <p>Preencha os dados para garantir seu convite exclusivo e receber as atualizações.</p>
+                    </div>
+
+                    <form id="rsvpForm" novalidate>
+                        <div class="field-group">
+                            <label for="nome">Nome Completo *</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required autocomplete="name">
+                            <span class="error-msg" id="nomeError">Digite seu nome completo.</span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="whatsapp">WhatsApp *</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(17) 99999-9999" maxlength="15" required autocomplete="tel">
+                            <span class="error-msg" id="whatsappError">Informe um WhatsApp válido.</span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required autocomplete="email">
+                            <span class="error-msg" id="emailError">Informe um e-mail válido.</span>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            CONFIRMAR MINHA PRESENÇA
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Estado de Sucesso -->
+                <div class="success-card hidden" id="successCard">
+                    <div class="success-badge">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3>Presença Confirmada!</h3>
+                    <p class="success-text">Obrigado, <strong id="userNameSpan">Convidado</strong>! Sua vaga foi reservada para o lançamento em São José do Rio Preto.</p>
+
+                    <div class="quick-actions">
+                        <button class="btn-action btn-gcal" id="addGcalBtn">
+                            <i class="fa-regular fa-calendar-plus"></i> Adicionar ao Google Agenda
+                        </button>
+                        
+                        <button class="btn-action btn-ical" id="addIcalBtn">
+                            <i class="fa-solid fa-file-export"></i> Baixar Lembrete (iCal)
+                        </button>
+
+                        <a href="#" class="btn-action btn-wsp" id="shareWspBtn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Compartilhar no WhatsApp
+                        </a>
+                    </div>
+
+                    <button class="btn-link" id="resetBtn">Cadastrar outro convidado</button>
+                </div>
+            </section>
+
+            <!-- Location Map Link -->
+            <section class="location-link-section text-center">
+                <a href="https://maps.google.com/?q=ACIRP+Sao+Jose+do+Rio+Preto+SP" target="_blank" class="btn-location">
+                    <i class="fa-solid fa-map-pin"></i> Ver ACIRP no Google Maps
+                </a>
+            </section>
+
+            <!-- Minimalist Footer -->
+            <footer class="footer text-center">
+                <p>22.10.2026 • São José do Rio Preto - SP</p>
+                <p class="footer-copy">© 2026 Filipe R. Carvalho. Todos os direitos reservados.</p>
+            </footer>
+
+        </div> <!-- /content-cards-container -->
+
+    </div> <!-- /app-wrapper -->
+
+    <script src="script.js"></script>
+</body>
+</html>
