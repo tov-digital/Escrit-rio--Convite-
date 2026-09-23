@@ -18,17 +18,19 @@
 </head>
 <body>
 
-    <!-- Fixed Background Book Image with Scroll Fade Overlay -->
-    <div class="fixed-book-bg" id="fixedBookBg">
-        <div class="book-bg-glow"></div>
-        <img src="images/Livro.png" alt="Capa do Livro Devedor Contumaz" class="book-bg-image" id="bookBgImg">
-        <div class="book-bg-overlay" id="bgOverlay"></div>
+    <!-- Full-Bleed Background Container (Imersivo de fora a fora na tela) -->
+    <div class="full-bleed-bg" id="fullBleedBg">
+        <div class="hero-image-wrap">
+            <img src="images/Livro.png" alt="Capa do Livro Devedor Contumaz" class="hero-full-image" id="heroFullImage">
+        </div>
+        <!-- Gradient mask que esmaece a imagem no scroll -->
+        <div class="hero-fade-overlay" id="heroFadeOverlay"></div>
     </div>
 
-    <!-- Mobile-First App Scroll Content Layer -->
+    <!-- Main Container -->
     <div class="app-wrapper">
 
-        <!-- Top Spacing Hero Header -->
+        <!-- Top Header Overlay (Posicionado sobre o topo da imagem) -->
         <header class="header text-center">
             <span class="badge-tag">SAVE THE DATE</span>
             <h1 class="main-heading">Lançamento Oficial</h1>
@@ -36,21 +38,22 @@
             <p class="preface-credit">Prefácio e Revisão de <span>Costa Machado</span></p>
         </header>
 
-        <!-- Book Title Banner (Scrolls over background) -->
-        <section class="book-title-banner text-center">
-            <h2 class="book-title">DEVEDOR CONTUMAZ</h2>
-            <p class="book-subtitle">Análise, Planejamento e Estratégias de Defesa na <strong>Lei Complementar 225/2026</strong></p>
-            
-            <div class="scroll-indicator">
-                <span>Role para ver os detalhes</span>
-                <i class="fa-solid fa-chevron-down bounce"></i>
-            </div>
-        </section>
+        <!-- Indicador de Rolagem -->
+        <div class="scroll-prompt text-center">
+            <span>Role para ver as informações</span>
+            <i class="fa-solid fa-chevron-down bounce"></i>
+        </div>
 
-        <!-- Content Card Overlay (Scrolls over the background image, triggering the fade) -->
-        <div class="content-cards-container">
+        <!-- Informações Posicionadas Abaixo da Imagem -->
+        <main class="info-content-below">
             
-            <!-- Key Event Details -->
+            <!-- Banner com Título do Livro -->
+            <section class="book-title-card text-center">
+                <h2 class="book-title">DEVEDOR CONTUMAZ</h2>
+                <p class="book-subtitle">Análise, Planejamento e Estratégias de Defesa na <strong>Lei Complementar 225/2026</strong></p>
+            </section>
+
+            <!-- Detalhes do Evento (Data e Local) -->
             <section class="event-details">
                 <div class="detail-card">
                     <div class="detail-icon">
@@ -75,7 +78,7 @@
                 </div>
             </section>
 
-            <!-- Contador Regressivo Compacto -->
+            <!-- Contador Regressivo -->
             <section class="countdown-section text-center">
                 <span class="countdown-label"><i class="fa-regular fa-clock"></i> FALTAM PARA O EVENTO</span>
                 <div class="countdown-grid" id="countdown">
@@ -101,7 +104,7 @@
                 </div>
             </section>
 
-            <!-- RSVP Form Section -->
+            <!-- Formulário RSVP -->
             <section class="rsvp-section" id="rsvpSection">
                 <div class="rsvp-card" id="formCard">
                     <div class="rsvp-header text-center">
@@ -134,7 +137,7 @@
                     </form>
                 </div>
 
-                <!-- Estado de Sucesso -->
+                <!-- Estado de Sucesso (Exibido após cadastro) -->
                 <div class="success-card hidden" id="successCard">
                     <div class="success-badge">
                         <i class="fa-solid fa-check"></i>
@@ -160,22 +163,22 @@
                 </div>
             </section>
 
-            <!-- Location Map Link -->
+            <!-- Link do Mapa da ACIRP -->
             <section class="location-link-section text-center">
                 <a href="https://maps.google.com/?q=ACIRP+Sao+Jose+do+Rio+Preto+SP" target="_blank" class="btn-location">
                     <i class="fa-solid fa-map-pin"></i> Ver ACIRP no Google Maps
                 </a>
             </section>
 
-            <!-- Minimalist Footer -->
+            <!-- Rodapé -->
             <footer class="footer text-center">
                 <p>22.10.2026 • São José do Rio Preto - SP</p>
                 <p class="footer-copy">© 2026 Filipe R. Carvalho. Todos os direitos reservados.</p>
             </footer>
 
-        </div> <!-- /content-cards-container -->
+        </main>
 
-    </div> <!-- /app-wrapper -->
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,38 +1,34 @@
 /**
  * Save the Date - Lançamento "Devedor Contumaz"
- * JavaScript Interativo (Scroll Fade Background, Form, Timer)
+ * JavaScript Interativo (Scroll Fade Hero Full-Bleed, Form, Timer)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 0. SCROLL FADE BACKGROUND EFFECT ---
-    const fixedBookBg = document.getElementById('fixedBookBg');
-    const bookBgImg = document.getElementById('bookBgImg');
-    const bgOverlay = document.getElementById('bgOverlay');
+    // --- 0. SCROLL FADE HERO FULL-BLEED EFFECT ---
+    const fullBleedBg = document.getElementById('fullBleedBg');
+    const heroFullImage = document.getElementById('heroFullImage');
+    const heroFadeOverlay = document.getElementById('heroFadeOverlay');
 
     function handleScrollFade() {
         const scrollY = window.scrollY || window.pageYOffset;
-        // Ponto onde a imagem esmaece totalmente (350px de rolagem)
-        const fadeThreshold = 380;
+        // Distância de rolagem para esmaecer a imagem totalmente (420px)
+        const fadeThreshold = 420;
         
         let progress = Math.min(scrollY / fadeThreshold, 1);
-        
-        if (fixedBookBg) {
-            // Esmaecer a opacidade geral da imagem de fundo
-            fixedBookBg.style.opacity = (1 - progress * 0.92).toFixed(3);
-        }
-        
-        if (bookBgImg) {
-            // Efeito sutil de escala e leve desfoque à medida que o conteúdo rola por cima
-            const scale = 1 + progress * 0.12;
-            const blur = progress * 8;
-            bookBgImg.style.transform = `translateY(${30 - progress * 15}px) scale(${scale})`;
-            bookBgImg.style.filter = `drop-shadow(0 20px 35px rgba(45, 20, 35, ${0.18 * (1 - progress)})) blur(${blur}px)`;
+
+        if (heroFullImage) {
+            // Esmaecer a opacidade da imagem e aplicar leve desfoque à medida que o conteúdo sobrepõe
+            const scale = 1 + progress * 0.08;
+            const blur = progress * 10;
+            heroFullImage.style.transform = `scale(${scale})`;
+            heroFullImage.style.opacity = (1 - progress * 0.95).toFixed(3);
+            heroFullImage.style.filter = `drop-shadow(0 15px 30px rgba(45, 20, 35, ${0.15 * (1 - progress)})) blur(${blur}px)`;
         }
 
-        if (bgOverlay) {
-            // Aumentar a opacidade da máscara de fundo para cobrir suavemente a imagem
-            bgOverlay.style.opacity = (0.6 + progress * 0.4).toFixed(3);
+        if (heroFadeOverlay) {
+            // Transição para o fundo claro (#f7f4f0)
+            heroFadeOverlay.style.opacity = (0.3 + progress * 0.7).toFixed(3);
         }
     }
 
