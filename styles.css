@@ -607,38 +607,6 @@ input:focus {
     text-decoration: underline;
 }
 
-/* Location Link */
-.location-link-section {
-    margin-top: 0.5rem;
-}
-
-.btn-location {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.9rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-md);
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 0.88rem;
-    text-decoration: none;
-    box-shadow: var(--shadow-subtle);
-    transition: all 0.2s ease;
-}
-
-.btn-location i {
-    color: var(--accent-gold);
-}
-
-.btn-location:hover {
-    border-color: var(--accent-gold);
-    background: #ffffff;
-}
-
 /* Footer */
 .footer {
     border-top: 1px solid #e8e2db;
@@ -651,4 +619,134 @@ input:focus {
 .footer-copy {
     font-size: 0.75rem;
     margin-top: 0.2rem;
+}
+
+/* Glow oculto no mobile por padrão */
+.book-highlight-glow {
+    display: none;
+}
+
+/* ==========================================================================
+   DESKTOP VIEWPORT STYLES (min-width: 992px)
+   Livro fixado do lado esquerdo com efeito de destaque,
+   e demais elementos distribuídos do lado direito.
+   ========================================================================== */
+@media (min-width: 992px) {
+    body {
+        display: block;
+        background-color: var(--bg-color);
+        overflow-x: hidden;
+    }
+
+    .main-layout-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 100vh;
+        padding: 3.5rem 2.5rem;
+        gap: 4rem;
+        align-items: start;
+    }
+
+    /* Coluna Esquerda: Livro Sticky com Efeito Halo Glow */
+    .book-column-left {
+        position: sticky;
+        top: 3.5rem;
+        height: calc(100vh - 7rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .full-bleed-bg {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: transparent !important;
+        opacity: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: visible !important;
+    }
+
+    .hero-image-wrap {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        padding: 0 !important;
+    }
+
+    /* Efeito de Destaque Glow Dourado/Vinho atrás do livro no computador */
+    .book-highlight-glow {
+        display: block;
+        position: absolute;
+        width: 440px;
+        height: 580px;
+        background: radial-gradient(circle, rgba(179, 139, 66, 0.28) 0%, rgba(74, 21, 55, 0.16) 45%, transparent 70%);
+        filter: blur(45px);
+        z-index: 0;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: desktopGlowPulse 4.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes desktopGlowPulse {
+        0% { transform: scale(0.95); opacity: 0.7; }
+        100% { transform: scale(1.08); opacity: 1; }
+    }
+
+    .hero-full-image {
+        width: auto !important;
+        max-width: 100% !important;
+        max-height: 80vh !important;
+        object-fit: contain !important;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        filter: drop-shadow(0 25px 50px rgba(45, 20, 35, 0.28)) !important;
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.4s ease !important;
+        z-index: 1 !important;
+        cursor: pointer;
+    }
+
+    .hero-full-image:hover {
+        transform: translateY(-8px) scale(1.025) !important;
+        filter: drop-shadow(0 35px 65px rgba(45, 20, 35, 0.38)) !important;
+    }
+
+    /* Ocultar elementos exclusivos de mobile no computador */
+    .scroll-arrow-discrete {
+        display: none !important;
+    }
+
+    .hero-fade-overlay {
+        display: none !important;
+    }
+
+    /* Coluna Direita: Informações e Formulário */
+    .content-column-right.app-wrapper {
+        max-width: 560px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .info-content-below {
+        margin-top: 0 !important;
+        gap: 1.5rem !important;
+    }
+
+    .header {
+        padding: 1.8rem 1.6rem;
+    }
+
+    .rsvp-card {
+        padding: 2.2rem 1.8rem;
+    }
 }

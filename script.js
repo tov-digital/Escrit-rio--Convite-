@@ -5,13 +5,29 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 0. SCROLL FADE HERO FULL-BLEED EFFECT ---
+    // --- 0. SCROLL FADE HERO FULL-BLEED EFFECT (Mobile Only) ---
     const fullBleedBg = document.getElementById('fullBleedBg');
     const heroFullImage = document.getElementById('heroFullImage');
     const heroFadeOverlay = document.getElementById('heroFadeOverlay');
     const scrollArrow = document.getElementById('scrollArrow');
 
     function handleScrollFade() {
+        if (window.innerWidth >= 992) {
+            // Em telas desktop/computador, manter a imagem do livro nítida e visível na coluna esquerda
+            if (heroFullImage) {
+                heroFullImage.style.transform = '';
+                heroFullImage.style.opacity = '';
+                heroFullImage.style.filter = '';
+            }
+            if (heroFadeOverlay) {
+                heroFadeOverlay.style.opacity = '';
+            }
+            if (scrollArrow) {
+                scrollArrow.style.opacity = '';
+            }
+            return;
+        }
+
         const scrollY = window.scrollY || window.pageYOffset;
         // Distância de rolagem para esmaecer a imagem totalmente (420px)
         const fadeThreshold = 420;
@@ -47,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', handleScrollFade, { passive: true });
+    window.addEventListener('resize', handleScrollFade, { passive: true });
     handleScrollFade(); // Execução inicial
 
 
