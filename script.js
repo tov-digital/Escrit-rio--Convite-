@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fullBleedBg = document.getElementById('fullBleedBg');
     const heroFullImage = document.getElementById('heroFullImage');
     const heroFadeOverlay = document.getElementById('heroFadeOverlay');
+    const scrollArrow = document.getElementById('scrollArrow');
 
     function handleScrollFade() {
         const scrollY = window.scrollY || window.pageYOffset;
@@ -30,6 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Transição para o fundo claro (#f7f4f0)
             heroFadeOverlay.style.opacity = (0.3 + progress * 0.7).toFixed(3);
         }
+
+        if (scrollArrow) {
+            // A seta desaparece rapidamente assim que o usuário começa a rolar
+            const arrowProgress = Math.min(scrollY / 120, 1);
+            scrollArrow.style.opacity = (1 - arrowProgress).toFixed(2);
+            scrollArrow.style.pointerEvents = arrowProgress > 0.8 ? 'none' : 'auto';
+        }
+    }
+
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', () => {
+            window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' });
+        });
     }
 
     window.addEventListener('scroll', handleScrollFade, { passive: true });
