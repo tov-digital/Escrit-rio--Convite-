@@ -199,6 +199,7 @@ body {
    Informações Posicionadas Abaixo da Imagem
    ========================================================================== */
 .info-content-below {
+    margin-top: 80vh; /* Inicia o conteúdo rolável abaixo da imagem de capa */
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
