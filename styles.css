@@ -773,9 +773,9 @@ input:focus {
         display: none !important;
     }
 
-    /* Coluna 2: Informações do Evento - Alinhada no Topo */
+    /* Coluna 2: Informações do Evento - Alinhada no Topo (Mas deslocada para baixo) */
     .layout-col-info {
-        margin-top: 0 !important;
+        margin-top: 12vh !important;
         padding: 0 !important;
         max-width: 100% !important;
         width: 100%;
@@ -803,8 +803,9 @@ input:focus {
         padding: 1.2rem 1.2rem;
     }
 
-    /* Coluna 3: Formulário de Confirmação (RSVP) - Alinhada no Topo */
+    /* Coluna 3: Formulário de Confirmação (RSVP) - Alinhada no Topo (Mas deslocada para baixo) */
     .layout-col-rsvp {
+        margin-top: 12vh !important;
         padding: 0 !important;
         max-width: 100% !important;
         width: 100%;
