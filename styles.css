@@ -279,6 +279,41 @@ body {
     box-shadow: var(--shadow-subtle);
 }
 
+/* Cartão clicável com indicação visual */
+.detail-card-link {
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(179, 139, 66, 0.35);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.detail-card-link:hover {
+    background: #ffffff;
+    border-color: var(--accent-gold);
+    box-shadow: 0 8px 25px rgba(179, 139, 66, 0.18);
+    transform: translateY(-2px);
+}
+
+.link-icon-inline {
+    font-size: 0.65rem;
+    margin-left: 0.25rem;
+    color: var(--accent-gold);
+}
+
+.detail-chevron {
+    margin-left: auto;
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.detail-card-link:hover .detail-chevron {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
 .detail-icon {
     width: 44px;
     height: 44px;
