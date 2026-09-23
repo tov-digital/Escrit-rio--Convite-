@@ -173,34 +173,67 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (isValid) {
-                // Registrar Lead
+                const submitBtn = document.getElementById('submitBtn');
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : 'CONFIRMAR MINHA PRESENÇA';
+                
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> CONFIRMANDO...';
+                }
+
+                // Dados do Lead
                 const leadData = {
                     nome: nomeVal,
                     whatsapp: whatsappInput.value,
                     email: emailVal,
+                    origem: "Save The Date - Lançamento Devedor Contumaz",
                     dataCadastro: new Date().toISOString()
                 };
 
-                try {
-                    const existing = JSON.parse(localStorage.getItem('devedor_contumaz_leads') || '[]');
-                    existing.push(leadData);
-                    localStorage.setItem('devedor_contumaz_leads', JSON.stringify(existing));
-                } catch (err) {
-                    console.log('Lead salvo:', leadData);
-                }
+                // Envio para o Webhook n8n
+                const webhookUrl = 'https://n8n.srv1077266.hstgr.cloud/webhook/savethedate_livro';
 
-                // Atualizar tela de confirmação
-                const firstName = nomeVal.split(' ')[0];
-                if (userNameSpan) userNameSpan.textContent = firstName;
+                fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(leadData)
+                })
+                .then(response => {
+                    console.log('Webhook n8n resposta:', response.status);
+                })
+                .catch(err => {
+                    console.warn('Erro ao enviar para o webhook (prosseguindo com confirmação):', err);
+                })
+                .finally(() => {
+                    // Salvar backup local no localStorage
+                    try {
+                        const existing = JSON.parse(localStorage.getItem('devedor_contumaz_leads') || '[]');
+                        existing.push(leadData);
+                        localStorage.setItem('devedor_contumaz_leads', JSON.stringify(existing));
+                    } catch (e) {
+                        console.log('Backup local salvo');
+                    }
 
-                if (formCard) formCard.style.display = 'none';
-                if (successCard) successCard.classList.remove('hidden');
+                    // Atualizar tela de confirmação
+                    const firstName = nomeVal.split(' ')[0];
+                    if (userNameSpan) userNameSpan.textContent = firstName;
 
-                // Rolar suavemente até o cartão de confirmação
-                successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (formCard) formCard.style.display = 'none';
+                    if (successCard) successCard.classList.remove('hidden');
 
-                // Configurar botões de agenda e compartilhamento
-                setupCalendarAndShare(nomeVal);
+                    // Rolar suavemente até o cartão de confirmação
+                    successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Configurar botões de agenda e compartilhamento
+                    setupCalendarAndShare(nomeVal);
+
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    }
+                });
             }
         });
     }
