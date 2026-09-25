@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupCalendarAndShare(nome) {
         const title = encodeURIComponent("Lançamento do Livro 'Devedor Contumaz' - Filipe R. Carvalho");
         const details = encodeURIComponent("Lançamento do livro 'Devedor Contumaz: Análise, Planejamento e Estratégias de Defesa na Lei Complementar 225/2026' por Filipe R. Carvalho.");
-        const location = encodeURIComponent("Auditório da ACIRP - R. Silva Jardim, 3099 - Centro, São José do Rio Preto - SP");
+        const location = encodeURIComponent("Av. Bady Bassitt, 4052 - Vila Nossa Sra. Aparecida, São José do Rio Preto - SP, 15025-170");
         
         // Google Calendar Link
         const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261022T210000Z/20261022T230000Z&details=${details}&location=${location}`;
@@ -293,7 +293,7 @@ PRODID:-//Devedor Contumaz//PT
 BEGIN:VEVENT
 SUMMARY:Lançamento do Livro Devedor Contumaz - Filipe R. Carvalho
 DESCRIPTION:Lançamento oficial do livro Devedor Contumaz.
-LOCATION:Auditório da ACIRP - São José do Rio Preto - SP
+LOCATION:Av. Bady Bassitt, 4052 - Vila Nossa Sra. Aparecida, São José do Rio Preto - SP, 15025-170
 DTSTART:20261022T210000Z
 DTEND:20261022T230000Z
 STATUS:CONFIRMED
