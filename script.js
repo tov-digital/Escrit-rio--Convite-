@@ -3,6 +3,12 @@
  * JavaScript Interativo (Scroll Fade Hero Full-Bleed, Form, Timer)
  */
 
+// Garantir que a página sempre abra no topo (especialmente em celulares)
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 0. SCROLL FADE HERO FULL-BLEED EFFECT (Mobile Only) ---
